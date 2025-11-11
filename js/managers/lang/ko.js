@@ -31,7 +31,7 @@ const LANG_KO = {
     // 좌측 패널 (게임 가이드)
     gameGuideTitle: "게임 가이드",
     guideStages: "총 5개의 스테이지",
-    guidePower: "파워 10당 지원기 1대 추가",
+    guidePower: "파워 15당 지원기 1대 추가",
     guideBoss: "각 스테이지 끝에 보스 등장",
     
     // 좌측 패널 (볼륨 설정)

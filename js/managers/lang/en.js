@@ -31,7 +31,7 @@ const LANG_EN = {
     // 좌측 패널 (게임 가이드)
     gameGuideTitle: "Game Guide",
     guideStages: "Total 5 Stages",
-    guidePower: "+1 Support Ship per 10 Power",
+    guidePower: "+1 Support Ship per 15 Power",
     guideBoss: "Boss appears at stage end",
     
     // 좌측 패널 (볼륨 설정)

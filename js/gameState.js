@@ -122,5 +122,4 @@ const GAME_CONFIG = {
     playerFocusSpeed: 150,  // 플레이어 저속 속도 (기획: 50% 감소)
     playerInvincibleTime: 1.0, // 피격 후 무적 시간 (기획: 1초)
     
-    // ... (추후 난이도별 설정 추가)
 };

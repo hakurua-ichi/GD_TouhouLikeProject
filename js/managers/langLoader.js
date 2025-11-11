@@ -20,7 +20,7 @@ class LanguageManager {
         // (index.html 구조에 의존적이므로, HTML 변경 시 여기도 수정 필요)
         this.elements = {
             title: document.querySelector('.header-left h1'),
-            stageProgress: document.querySelector('.header-center span'),
+            stageProgressLabel: document.getElementById('stage-progress-label'), // 스테이지 진행도 레이블
             gameInfoTitle: document.getElementById('game-info-title'), // 게임 정보 제목
             controlsTitle: document.getElementById('controls-title'), // 조작법 제목
             controlsList: document.getElementById('controls-list'), // <ul>
@@ -87,7 +87,7 @@ class LanguageManager {
 
         // --- 헤더 ---
         if (this.elements.title) this.elements.title.textContent = pack.title;
-        if (this.elements.stageProgress) this.elements.stageProgress.textContent = pack.stageProgress;
+        if (this.elements.stageProgressLabel) this.elements.stageProgressLabel.textContent = pack.stageProgress;
         
         // 난이도 선택 (옵션 텍스트 변경)
         if (DOM.difficultySelector) {
@@ -98,8 +98,10 @@ class LanguageManager {
 
         // 버튼
         if (DOM.startButton) DOM.startButton.textContent = pack.startButton;
-        // (일시정지 버튼은 상태에 따라 '일시정지'/'계속'이 되므로 UIManager가 관리)
-        if (DOM.pauseButton && !gameState.isPaused) DOM.pauseButton.textContent = pack.pauseButton;
+        // 일시정지 버튼은 현재 상태에 따라 텍스트 변경
+        if (DOM.pauseButton) {
+            DOM.pauseButton.textContent = gameState.isPaused ? pack.resumeButton : pack.pauseButton;
+        }
         if (DOM.resetButton) DOM.resetButton.textContent = pack.resetButton;
         
         // --- 좌측 패널 (게임 정보) ---

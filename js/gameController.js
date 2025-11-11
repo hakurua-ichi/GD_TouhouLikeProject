@@ -389,8 +389,10 @@ class GameController {
         }
         if (!gameState.isRunning || !this.player) return;
 
-        // --- 게임 진행 시간 ---
-        this.gameTime += deltaTime;
+        // --- 게임 진행 시간 (시간정지가 아닐 때만 증가) ---
+        if (!gameState.isTimeStopped) {
+            this.gameTime += deltaTime;
+        }
         
         // --- 객체 업데이트 (순서 중요) ---
         // 1. 플레이어

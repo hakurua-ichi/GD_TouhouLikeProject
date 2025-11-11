@@ -49,8 +49,8 @@ class UIManager {
         // 1. HTML UI 업데이트 (매번 할 필요는 없고, 변경 시에만 하는 것이 효율적)
         // (GameController에서 점수/생명 변경 시 특정 함수를 호출하는 방식으로 변경 예정)
         
-        // 2. 스테이지 진행도 업데이트 (임시)
-        if (gameState.isRunning && !gameState.isPaused && !gameState.isBossActive) {
+        // 2. 스테이지 진행도 업데이트 (시간정지 중에는 멈춤)
+        if (gameState.isRunning && !gameState.isPaused && !gameState.isBossActive && !gameState.isTimeStopped) {
             this.stageTimer += deltaTime;
             const progress = Math.min(100, (this.stageTimer / this.stageDuration) * 100);
             this.updateStageProgress(progress);
